@@ -19,7 +19,7 @@ def parse_line(line):
     address, date, request, status, size = match.groups()
     ip = ipaddress.ip_address(address)
     parts = request.split()
-    if len(parts) != 3 or not parts[0].isalpha() or not parts[2].startswith('HTTP/'):
+    if len(parts) != 3 or not re.fullmatch(r"[!#$%&'*+.^_`|~0-9A-Za-z-]+", parts[0]) or not re.fullmatch(r'HTTP/\d+\.\d+', parts[2]):
         raise ValueError('Requête HTTP non reconnue')
     stamp = re.fullmatch(r'(\d{2})/(\w{3})/(\d{4}):(\d{2}):(\d{2}):(\d{2}) ([+-])(\d{2})(\d{2})', date)
     if not stamp:
@@ -46,7 +46,7 @@ def analyze(lines):
         total += 1
         try:
             event = parse_line(line)
-        except ValueError as error:
+        except (ValueError, OverflowError) as error:
             invalid += 1
             if len(invalid_examples) < 10:
                 invalid_examples.append({'line': number, 'reason': str(error)})
@@ -100,3 +100,4 @@ def main():
 
 if __name__ == '__main__':
     raise SystemExit(main())
+
