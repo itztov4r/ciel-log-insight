@@ -42,3 +42,11 @@ class LogTests(unittest.TestCase):
         report = analyze(['bad'] * 20)
         self.assertEqual(report['invalid_lines'], 20)
         self.assertEqual(len(report['invalid_examples']), 10)
+
+    def test_invalid_http_version_and_utc_overflow_are_counted(self):
+        report = analyze([line(request='GET / HTTP/garbage'), line(date='01/Jan/0001:00:00:00 +0100')])
+        self.assertEqual(report['invalid_lines'], 2)
+
+    def test_extension_method_is_valid(self):
+        self.assertEqual(parse_line(line(request='M-SEARCH / HTTP/1.1'))['path'], '/')
+
