@@ -1,5 +1,7 @@
 # CIEL Log Insight
 
+[**Voir le rapport de démonstration · données fictives**](https://itztov4r.github.io/ciel-log-insight/)
+
 **Transformer un fichier de logs HTTP en rapport HTML autonome et lisible.**
 
 Python 3.10+, bibliothèque standard uniquement. Projet pédagogique préparé avec assistance IA pour le portfolio de Mehdi Hmaiss.
