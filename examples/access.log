@@ -1,0 +1,7 @@
+192.0.2.10 - - [04/Nov/2026:08:00:00 +0100] "GET / HTTP/1.1" 200 1600
+192.0.2.11 - - [04/Nov/2026:08:10:00 +0100] "GET /assets/style.css HTTP/1.1" 200 2400 "-" "DemoBrowser/1.0"
+198.51.100.8 - - [04/Nov/2026:08:20:00 +0100] "GET /contact?source=demo HTTP/1.1" 200 900
+198.51.100.9 - - [04/Nov/2026:08:30:00 +0100] "GET /missing HTTP/1.1" 404 120
+2001:db8::4 - - [04/Nov/2026:09:00:00 +0100] "GET /api/status HTTP/1.1" 503 80
+192.0.2.10 - - [04/Nov/2026:09:10:00 +0100] "GET / HTTP/1.1" 304 -
+Ligne volontairement invalide pour démontrer le contrôle de qualité.

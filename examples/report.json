@@ -1,0 +1,60 @@
+{
+  "input_lines": 7,
+  "requests": 6,
+  "invalid_lines": 1,
+  "http_errors": 2,
+  "error_rate": 33.33,
+  "bytes": 5100,
+  "status_codes": {
+    "200": 3,
+    "304": 1,
+    "404": 1,
+    "503": 1
+  },
+  "top_paths": [
+    [
+      "/",
+      2
+    ],
+    [
+      "/assets/style.css",
+      1
+    ],
+    [
+      "/contact",
+      1
+    ],
+    [
+      "/missing",
+      1
+    ],
+    [
+      "/api/status",
+      1
+    ]
+  ],
+  "activity_utc": {
+    "2026-11-04 07:00 UTC": 4,
+    "2026-11-04 08:00 UTC": 2
+  },
+  "top_networks": [
+    [
+      "192.0.2.0/24",
+      3
+    ],
+    [
+      "198.51.100.0/24",
+      2
+    ],
+    [
+      "2001:db8::/48",
+      1
+    ]
+  ],
+  "invalid_examples": [
+    {
+      "line": 7,
+      "reason": "Format Common/Combined non reconnu"
+    }
+  ]
+}
